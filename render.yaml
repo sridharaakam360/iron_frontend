@@ -1,0 +1,12 @@
+services:
+  - type: static
+    name: iron-frontend
+    env: static
+    buildCommand: "npm ci && npm run build"
+    staticPublishPath: dist
+    routes:
+      - type: rewrite
+        source: "/*"
+        destination: "/index.html"
+        # status: 200  # Render treats rewrite as 200 internally
+        # preserveQueryString: true  # optional
