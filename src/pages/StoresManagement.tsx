@@ -23,7 +23,7 @@ interface StoreData {
   isApproved: boolean;
   isActive: boolean;
   createdAt: string;
-  _count: {
+  _count?: {
     users: number;
     bills: number;
     customers: number;
@@ -280,13 +280,13 @@ const StoresManagement: React.FC = () => {
 
                     <div className="flex gap-4 text-sm">
                       <span className="text-muted-foreground">
-                        Users: <strong>{store._count.users}</strong>
+                        Users: <strong>{store._count?.users ?? 0}</strong>
                       </span>
                       <span className="text-muted-foreground">
-                        Bills: <strong>{store._count.bills}</strong>
+                        Bills: <strong>{store._count?.bills ?? 0}</strong>
                       </span>
                       <span className="text-muted-foreground">
-                        Customers: <strong>{store._count.customers}</strong>
+                        Customers: <strong>{store._count?.customers ?? 0}</strong>
                       </span>
                     </div>
                   </div>
