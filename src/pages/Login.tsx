@@ -7,8 +7,9 @@ import { Input } from '@/components/ui/input';
 import { useToast } from '@/hooks/use-toast';
 
 const Login: React.FC = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  // Prefill demo credentials during local development for faster testing
+  const [email, setEmail] = useState(import.meta.env.DEV ? 'superadmin@ironpress.com' : '');
+  const [password, setPassword] = useState(import.meta.env.DEV ? 'Admin@123' : '');
   const [isLoading, setIsLoading] = useState(false);
   const { login } = useAuth();
   const navigate = useNavigate();

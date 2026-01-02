@@ -2,6 +2,10 @@ import axios from 'axios';
 
 const API_URL = import.meta.env.VITE_API_URL || 'https://ironbackend-production.up.railway.app/api/v1';
 
+// Debug: print which API URL is being used at runtime
+// Remove or comment out this line after verification
+console.log('Resolved API_URL:', API_URL);
+
 export const api = axios.create({
   baseURL: API_URL,
   headers: {
